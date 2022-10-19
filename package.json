@@ -2,6 +2,7 @@
   "name": "keyboardio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://alireza9476.github.io/KeyboardIO",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
@@ -27,7 +28,9 @@
     "test": "cypress open",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
