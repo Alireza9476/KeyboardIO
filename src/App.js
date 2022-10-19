@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header.js";
+import Home from "./pages/Home.js";
+
+import About from "./pages/About.js";
+import Footer from "./components/Footer.js";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import ForgotPassword from "./pages/ForgotPassword";
+import Register from "./pages/Register";
+import Copyright from "./pages/Copyright";
+
+import Standard from "./pages/Standard";
+import Advanced from "./pages/Advanced";
+import CustomSettings from "./pages/CustomSettings";
+import Experiment from "./pages/Experiment.js";
+
+import { AuthProvider } from "./context/AuthProvider.js";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/standard" element={<Standard />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+            <Route element={<RequireAuth />}>
+              <Route path="/advanced" element={<Advanced />} />
+              <Route path="/custom-settings" element={<CustomSettings />} />
+              <Route path="/expriment" element={<Experiment />} />
+              <Route path=":id" element={<Profile />} />
+            </Route>
+
+            <Route path="/about" element={<About />} />
+            <Route path="/copyright" element={<Copyright />} />
+            {/* <Route path="*" element={<Error />} /> */}
+          </Routes>
+          {/* <Footer /> */}
+        </AuthProvider>
+      </Router>
+    </>
   );
 }
+
+const Error = () => {
+  return <div>Error404</div>;
+};
 
 export default App;

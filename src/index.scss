@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .login-btn{
+       text-decoration-line: underline;
+       color: rgb(96 165 250);
+       &:hover{
+        color: #1565c0;
+       }
+    }
+}
