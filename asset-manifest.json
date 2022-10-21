@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/KeyboardIO/static/css/main.d03eee7a.css",
-    "main.js": "/KeyboardIO/static/js/main.3d161cb9.js",
+    "main.css": "/KeyboardIO/static/css/main.f0e5891a.css",
+    "main.js": "/KeyboardIO/static/js/main.67d9d85d.js",
+    "static/media/Typing.jpg": "/KeyboardIO/static/media/Typing.82708d2f41bd30b1a258.jpg",
     "static/media/SVG_mix_words.png": "/KeyboardIO/static/media/SVG_mix_words.1223291b3bb33d39a170.png",
     "static/media/Website_Logo.png": "/KeyboardIO/static/media/Website_Logo.0a3d8e5ed7fab4f24f28.png",
     "index.html": "/KeyboardIO/index.html",
-    "main.d03eee7a.css.map": "/KeyboardIO/static/css/main.d03eee7a.css.map",
-    "main.3d161cb9.js.map": "/KeyboardIO/static/js/main.3d161cb9.js.map"
+    "main.f0e5891a.css.map": "/KeyboardIO/static/css/main.f0e5891a.css.map",
+    "main.67d9d85d.js.map": "/KeyboardIO/static/js/main.67d9d85d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d03eee7a.css",
-    "static/js/main.3d161cb9.js"
+    "static/css/main.f0e5891a.css",
+    "static/js/main.67d9d85d.js"
   ]
 }
