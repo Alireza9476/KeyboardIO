@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import Register from "./pages/Register";
 import Copyright from "./pages/Copyright";
+import AccountSettings from "./pages/AccountSettings";
 
 import Standard from "./pages/Standard";
 import Advanced from "./pages/Advanced";
@@ -17,6 +18,7 @@ import Experiment from "./pages/Experiment.js";
 
 import { AuthProvider } from "./context/AuthProvider.js";
 import RequireAuth from "./components/RequireAuth";
+import { ACCOUNT_SETTINGS_URL } from "./config/URLs.js";
 
 function App() {
   return (
@@ -29,10 +31,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/standard" element={<Standard />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
 
             <Route element={<RequireAuth />}>
               <Route path="/advanced" element={<Advanced />} />
+              <Route path="/profile-settings" element={<AccountSettings />} />
+              <Route path="/forgotpassword" element={<ForgotPassword />} />
               <Route path="/custom-settings" element={<CustomSettings />} />
               <Route path="/expriment" element={<Experiment />} />
               <Route path=":id" element={<Profile />} />

@@ -16,7 +16,7 @@ import { red } from "@mui/material/colors";
 
 const URL = process.env.REACT_APP_DEVELOPMENT
   ? "localhost" //unfortunately the port isn't allowed here
-  : "https://KeyboardIO.Bagheri.at";
+  : "https://alireza9476.github.io/KeyboardIO/";
 
 export default function HeaderMenu() {
   const hiddenFileInput = React.useRef(null);
@@ -51,6 +51,7 @@ export default function HeaderMenu() {
         break;
       case 2:
         alert("Got some Statistics");
+        break;
       case 3:
         try {
           await navigator.share(shareData);
@@ -106,6 +107,7 @@ export default function HeaderMenu() {
         ariaLabel="SpeedDial"
         icon={<SpeedDialIcon />}
         direction="down"
+        FabProps={{ size: "medium" }}
       >
         {actions.map((action) => (
           <SpeedDialAction
@@ -114,6 +116,14 @@ export default function HeaderMenu() {
             tooltipTitle={action.name}
             onClick={() => {
               onClick(action.id);
+            }}
+            componentsProps={{
+              tooltip: {
+                sx: {
+                  bgcolor: "#DA81F5",
+                  color: "white",
+                },
+              },
             }}
           />
         ))}

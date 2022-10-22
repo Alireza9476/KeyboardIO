@@ -2,6 +2,7 @@ const LOGIN_URL = "/login";
 const REGISTER_URL = "/register";
 const FORGOT_PASSWORD_URL = "/forgotpassword";
 const PROFILE_URL = "/profile";
+const ACCOUNT_SETTINGS_URL = "/profile-settings";
 
 const HOMEPAGE_URL = "/";
 const ABOUT_URL = "/about";
@@ -17,6 +18,7 @@ export {
   LOGIN_URL,
   REGISTER_URL,
   PROFILE_URL,
+  ACCOUNT_SETTINGS_URL,
   FORGOT_PASSWORD_URL,
   HOMEPAGE_URL,
   ABOUT_URL,

@@ -13,7 +13,12 @@ import Logout from "@mui/icons-material/Logout";
 
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { HOMEPAGE_URL, LOGIN_URL, PROFILE_URL } from "../config/URLs";
+import {
+  HOMEPAGE_URL,
+  LOGIN_URL,
+  PROFILE_URL,
+  ACCOUNT_SETTINGS_URL,
+} from "../config/URLs";
 
 export default function AccountMenu() {
   const { setAuth, auth } = useAuth();
@@ -40,10 +45,17 @@ export default function AccountMenu() {
     navigate(HOMEPAGE_URL);
   };
 
+  function randomColor() {
+    let hex = Math.floor(Math.random() * 0xffffff);
+    let color = "#" + hex.toString(16);
+
+    return color;
+  }
+
   return (
     <React.Fragment>
       <Box sx={{ alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Account settings">
+        <Tooltip title="Account">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -51,7 +63,7 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 40, height: 40 }} />
+            <Avatar sx={{ width: 40, height: 40, bgcolor: "#DA81F5" }} />
           </IconButton>
         </Tooltip>
       </Box>
@@ -91,11 +103,14 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleProfile}>
-          <Avatar /> {auth.email ? "Profile" : "Login"}
-          {console.log("content: " + auth.email)}
+          <Avatar sx={auth.email ? { bgcolor: randomColor } : null}>
+            {auth.email ? auth.email.charAt(0).toUpperCase() : null}
+          </Avatar>{" "}
+          {auth.email ? "Profile" : "Login"}
+          {/* {console.log("content: " + auth.email)} */}
         </MenuItem>
         <Divider />
-        <MenuItem>
+        <MenuItem onClick={() => navigate(ACCOUNT_SETTINGS_URL)}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>

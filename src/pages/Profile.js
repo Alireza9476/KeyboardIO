@@ -6,7 +6,7 @@ function Profile() {
   const location = useParams();
   const { auth } = useAuth();
 
-  alert("Reached profile");
+  // alert("Reached profile");
   return (
     <div className="mt-20">
       <p>Email: {auth?.email}</p>
