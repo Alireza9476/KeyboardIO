@@ -1,0 +1,2 @@
+
+User bekommt beim Registrierung ein hexa color für Material-ui Avatar.

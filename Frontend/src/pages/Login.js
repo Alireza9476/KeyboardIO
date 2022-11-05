@@ -57,6 +57,7 @@ export default function SignIn() {
       email: data.get("email"),
       password: data.get("password"),
       id: userID,
+      userAccColor: randomColor(),
     });
     navigate(fromURL);
   };
@@ -139,4 +140,10 @@ export default function SignIn() {
   );
 }
 
+function randomColor() {
+  let hex = Math.floor(Math.random() * 0xffffff);
+  let color = "#" + hex.toString(16);
+
+  return color;
+}
 //https://github.com/mui/material-ui/tree/v5.10.8/docs/data/material/getting-started/templates/sign-in

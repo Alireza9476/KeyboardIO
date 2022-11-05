@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .login-btn {
+        text-decoration-line: underline;
+        color: rgb(96 165 250);
+
+        &:hover {
+            color: #1565c0;
+        }
+    }
+}
+
+@font-face {
+    font-family: roboto-light-bold;
+    src:
+        url("./fonts/Roboto/Roboto-Bold.ttf"),
+        url("./fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: roboto-light;
+    src:
+        url("./fonts/Roboto/Roboto-Light.ttf");
+}
+
+//Roboto regular
+@font-face {
+    font-family: roboto-regular-bold;
+    src:
+        url("./fonts/Roboto/Roboto-Bold.ttf"),
+        url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: roboto-regular;
+    src:
+        url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+
+// @include text-style(Roboto-light-bold, 700);
+// @mixin text-style($font-family, $font-weight, $line-height: normal) {
+//     font-family: $font-family;
+//     font-weight: $font-weight;
+//     line-height: $line-height;
+// }

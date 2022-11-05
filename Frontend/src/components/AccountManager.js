@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, Fragment } from "react";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -21,10 +21,10 @@ import {
 } from "../config/URLs";
 
 export default function AccountMenu() {
-  const { setAuth, auth } = useAuth();
+  const { setAuth, auth, userAccColor } = useAuth();
   const navigate = useNavigate();
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -45,15 +45,8 @@ export default function AccountMenu() {
     navigate(HOMEPAGE_URL);
   };
 
-  function randomColor() {
-    let hex = Math.floor(Math.random() * 0xffffff);
-    let color = "#" + hex.toString(16);
-
-    return color;
-  }
-
   return (
-    <React.Fragment>
+    <Fragment>
       <Box sx={{ alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account">
           <IconButton
@@ -103,7 +96,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleProfile}>
-          <Avatar sx={auth.email ? { bgcolor: randomColor } : null}>
+          <Avatar sx={auth.email ? { bgcolor: userAccColor } : null}>
             {auth.email ? auth.email.charAt(0).toUpperCase() : null}
           </Avatar>{" "}
           {auth.email ? "Profile" : "Login"}
@@ -123,6 +116,6 @@ export default function AccountMenu() {
           Logout
         </MenuItem>
       </Menu>
-    </React.Fragment>
+    </Fragment>
   );
 }

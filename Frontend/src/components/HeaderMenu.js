@@ -4,6 +4,7 @@ import SpeedDial, { SpeedDialProps } from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 
+import Popup from "./Popup";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import ShareIcon from "@mui/icons-material/Share";
@@ -13,6 +14,9 @@ import HomeIcon from "@mui/icons-material/Home";
 
 import { useNavigate } from "react-router-dom";
 import { red } from "@mui/material/colors";
+import { GET_STATISTICS_URL } from "../config/URLs";
+
+const get_statistics_content = "Profile statistics: ";
 
 const URL = process.env.REACT_APP_DEVELOPMENT
   ? "localhost" //unfortunately the port isn't allowed here
@@ -31,7 +35,7 @@ export default function HeaderMenu() {
   const actions = [
     { id: 0, icon: <HomeIcon />, name: "Home" },
     { id: 1, icon: <UploadFileIcon />, name: "Upload File (.txt | .csv)" },
-    { id: 2, icon: <AssessmentIcon />, name: "Copy statistics" },
+    { id: 2, icon: <AssessmentIcon />, name: "See statistics" },
     { id: 3, icon: <ShareIcon />, name: "Share" },
   ];
 
@@ -50,7 +54,7 @@ export default function HeaderMenu() {
         hiddenFileInput.current.click();
         break;
       case 2:
-        alert("Got some Statistics");
+        // auth.userAccColor !== undefined ? <Popup openProp={true} /> : null;
         break;
       case 3:
         try {

@@ -1,4 +1,3 @@
-
 export function getObject(pageName, values) {
   var content = {
     [pageName]: values.reduce(
@@ -9,25 +8,6 @@ export function getObject(pageName, values) {
   };
   return content;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 
     input:

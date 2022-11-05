@@ -118,7 +118,9 @@ function Standard() {
                   <React.Fragment key={index}>
                     <span
                       className={
-                        words?.includes(word) ? "bg-transparent" : "enteredWord"
+                        words?.includes(word)
+                          ? "bg-transparent"
+                          : "text-entered_word"
                       }
                     >
                       {word}

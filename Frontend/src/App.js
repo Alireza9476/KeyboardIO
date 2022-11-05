@@ -18,7 +18,19 @@ import Experiment from "./pages/Experiment.js";
 
 import { AuthProvider } from "./context/AuthProvider.js";
 import RequireAuth from "./components/RequireAuth";
-import { ACCOUNT_SETTINGS_URL } from "./config/URLs.js";
+import {
+  ABOUT_URL,
+  ACCOUNT_SETTINGS_URL,
+  ADVANCED_URL,
+  COPYRIGHT_URL,
+  CUSTOM_SETTINGS_URL,
+  EXPRIMENT_URL,
+  FORGOT_PASSWORD_URL,
+  HOMEPAGE_URL,
+  LOGIN_URL,
+  REGISTER_URL,
+  STANDARD_URL,
+} from "./config/URLs.js";
 
 function App() {
   return (
@@ -27,22 +39,25 @@ function App() {
         <AuthProvider>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/standard" element={<Standard />} />
-            <Route path="/register" element={<Register />} />
+            <Route path={HOMEPAGE_URL} element={<Home />} />
+            <Route path={LOGIN_URL} element={<Login />} />
+            <Route path={STANDARD_URL} element={<Standard />} />
+            <Route path={REGISTER_URL} element={<Register />} />
 
             <Route element={<RequireAuth />}>
-              <Route path="/advanced" element={<Advanced />} />
-              <Route path="/profile-settings" element={<AccountSettings />} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-              <Route path="/custom-settings" element={<CustomSettings />} />
-              <Route path="/expriment" element={<Experiment />} />
+              <Route path={ADVANCED_URL} element={<Advanced />} />
+              <Route
+                path={ACCOUNT_SETTINGS_URL}
+                element={<AccountSettings />}
+              />
+              <Route path={FORGOT_PASSWORD_URL} element={<ForgotPassword />} />
+              <Route path={CUSTOM_SETTINGS_URL} element={<CustomSettings />} />
+              <Route path={EXPRIMENT_URL} element={<Experiment />} />
               <Route path=":id" element={<Profile />} />
             </Route>
 
-            <Route path="/about" element={<About />} />
-            <Route path="/copyright" element={<Copyright />} />
+            <Route path={ABOUT_URL} element={<About />} />
+            <Route path={COPYRIGHT_URL} element={<Copyright />} />
             {/* <Route path="*" element={<Error />} /> */}
           </Routes>
           {/* <Footer /> */}

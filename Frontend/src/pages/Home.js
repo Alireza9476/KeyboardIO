@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import HeaderMenu from "../components/HeaderMenu";
-import Standard from "./Standard";
 import { useLocation } from "react-router-dom";
 import Popup from "../components/Popup";
 import styled, { keyframes } from "styled-components";
@@ -36,7 +34,7 @@ function Home() {
       <main className="max-w-[1400px] mx-auto">
         <div className="sm:flex sm:flex-col md:flex md:flex-row justify-between px-12 gap-10 gap-y-10">
           <div className="max-w-[600px] min-w-[250px]">
-            <h1 className="text-3xl font-bold w-full uppercase">
+            <h1 className="text-3xl font-roboto_regular font-bold w-full uppercase">
               Improve your typing skills with
             </h1>
             <h1 className="text-3xl font-bold w-full">

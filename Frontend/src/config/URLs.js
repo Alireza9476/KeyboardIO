@@ -13,6 +13,7 @@ const ADVANCED_URL = "/advanced";
 const CUSTOM_SETTINGS_URL = "/customsettings";
 
 const EXPRIMENT_URL = "/expriment";
+const GET_STATISTICS_URL = "/get-statistics";
 
 export {
   LOGIN_URL,
@@ -27,4 +28,5 @@ export {
   ADVANCED_URL,
   CUSTOM_SETTINGS_URL,
   EXPRIMENT_URL,
+  GET_STATISTICS_URL,
 };

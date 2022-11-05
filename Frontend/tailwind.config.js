@@ -8,10 +8,18 @@ module.exports = {
           DEFAULT: "#DA81F5",
           100: "#D358F7",
         },
+        entered_word: {
+          DEFAULT: "#BDBDBD",
+        },
       },
       screens: {
         // sm: "300px",
         sxm: "300px",
+      },
+      fontFamily: {
+        roboto_light: ["roboto-light"],
+        roboto_light_bold: ["roboto-light-bold"],
+        roboto_regular: ["roboto-regular"],
       },
     },
   },
