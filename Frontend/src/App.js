@@ -43,6 +43,7 @@ function App() {
             <Route path={LOGIN_URL} element={<Login />} />
             <Route path={STANDARD_URL} element={<Standard />} />
             <Route path={REGISTER_URL} element={<Register />} />
+            <Route path={FORGOT_PASSWORD_URL} element={<ForgotPassword />} />
 
             <Route element={<RequireAuth />}>
               <Route path={ADVANCED_URL} element={<Advanced />} />
@@ -50,7 +51,6 @@ function App() {
                 path={ACCOUNT_SETTINGS_URL}
                 element={<AccountSettings />}
               />
-              <Route path={FORGOT_PASSWORD_URL} element={<ForgotPassword />} />
               <Route path={CUSTOM_SETTINGS_URL} element={<CustomSettings />} />
               <Route path={EXPRIMENT_URL} element={<Experiment />} />
               <Route path=":id" element={<Profile />} />

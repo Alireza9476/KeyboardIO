@@ -11,14 +11,14 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={12} ref={ref} variant="filled" {...props} />;
 });
 
-export default function CustomizedSnackbars({ openProp, statistics = false }) {
-  const [open, setOpen] = React.useState(openProp);
+export default function CustomizedSnackbars({ message = "" }) {
+  console.log(message);
+  const [open, setOpen] = React.useState(message === "" ? false : true);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
 
@@ -29,13 +29,9 @@ export default function CustomizedSnackbars({ openProp, statistics = false }) {
       </Button> */}
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
-          {statistics ? (
+          {message !== "login" ? (
             <>
-              <div className="flex justify-center">
-                <h3>Your statistics</h3>
-                <img src={SVGRefresh} alt="copy statistics" />
-              </div>
-              <div>Some Information</div>
+              <div>{message}</div>
             </>
           ) : (
             <>

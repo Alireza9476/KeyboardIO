@@ -18,9 +18,10 @@ import { GET_STATISTICS_URL } from "../config/URLs";
 
 const get_statistics_content = "Profile statistics: ";
 
-const URL = process.env.REACT_APP_DEVELOPMENT
-  ? "localhost" //unfortunately the port isn't allowed here
-  : "https://alireza9476.github.io/KeyboardIO/";
+const URL =
+  // process.env.REACT_APP_DEVELOPMENT
+  //   ? "localhost" //unfortunately the port isn't allowed here:
+  "https://alireza9476.github.io/KeyboardIO/";
 
 export default function HeaderMenu() {
   const hiddenFileInput = React.useRef(null);

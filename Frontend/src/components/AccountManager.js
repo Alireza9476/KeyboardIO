@@ -7,7 +7,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
@@ -19,6 +18,7 @@ import {
   PROFILE_URL,
   ACCOUNT_SETTINGS_URL,
 } from "../config/URLs";
+import { logoutUser } from "../firebase/firebaseUserHandler";
 
 export default function AccountMenu() {
   const { setAuth, auth, userAccColor } = useAuth();
@@ -35,14 +35,19 @@ export default function AccountMenu() {
 
   const handleProfile = () => {
     // alert(auth.email);
-    if (auth.email !== undefined) navigate(auth.id);
+    console.log("Something: " + auth?.email);
+    if (!!auth?.email) navigate(auth?.uid);
     else navigate(LOGIN_URL);
   };
 
   const handleLogout = () => {
-    setAuth({});
-    console.log("Reached");
-    navigate(HOMEPAGE_URL);
+    try {
+      logoutUser();
+      setAuth({});
+      navigate(HOMEPAGE_URL);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (

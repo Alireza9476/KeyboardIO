@@ -4,22 +4,25 @@ import Popup from "../components/Popup";
 import styled, { keyframes } from "styled-components";
 
 import { default as Typing } from "../assets/Homepage/Typing.jpg";
+import useAuth from "../hooks/useAuth";
 
 function Home() {
   const location = useLocation();
-  let popup = undefined;
+  let popupMessage = "login";
 
-  if (location.state) {
-    popup = location.state.popup;
-    location.state.popup = false;
-  } else popup = "";
+  if (!!location.state?.popupMessage) {
+    popupMessage = location.state.popupMessage;
+    location.state.popupMessage = "";
+  } else popupMessage = "login";
+  const { fromURL } = useAuth();
 
   useEffect(() => {
     console.log("Home rendered");
     console.log(location.state);
 
+    console.log("Login: " + fromURL);
     return () => {
-      if (location.state) location.state.popup = false;
+      if (!!location.state?.popupMessage) location.state.popupMessage = "";
     };
   }, []);
 
@@ -30,7 +33,7 @@ function Home() {
   return (
     <>
       <div className="mt-40"></div>
-      {location.state ? <Popup openProp={true} /> : null}
+      {location.state ? <Popup message={popupMessage} /> : null}
       <main className="max-w-[1400px] mx-auto">
         <div className="sm:flex sm:flex-col md:flex md:flex-row justify-between px-12 gap-10 gap-y-10">
           <div className="max-w-[600px] min-w-[250px]">
