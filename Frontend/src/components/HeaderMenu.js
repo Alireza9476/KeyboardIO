@@ -55,7 +55,7 @@ export default function HeaderMenu() {
         hiddenFileInput.current.click();
         break;
       case 2:
-        // auth.userAccColor !== undefined ? <Popup openProp={true} /> : null;
+        // auth.userAccColor !== undefined ? <Popup openProp={true} /> : null; 
         break;
       case 3:
         try {
@@ -98,7 +98,7 @@ export default function HeaderMenu() {
             "[" +
             fileType +
             "]" +
-            " wird nicht unterstüzt"
+            " wird nicht unterstützt"
         );
       }
     } else {
